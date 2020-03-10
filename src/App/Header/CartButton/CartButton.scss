@@ -1,3 +1,18 @@
-.CartButton {
-    display: inline-block;
+// .CartButton {
+//     display: inline-block;
+    
+//   }
+
+  .CartButton.badge.badge-light {
+   font-size: 15px;
+   background-color: red;
+   border-radius: 30px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5px;
+   position: absolute;
+   right: 0;
   }
+

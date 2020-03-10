@@ -16,7 +16,7 @@ export class Product extends Component {
 
     componentDidMount() {
         productService.getById(this.props.match.params.id)
-            .then(res => res.json())
+            .then(res => res.json()) 
             .then(product => this.setState({ product }));
     }
 
@@ -27,13 +27,14 @@ export class Product extends Component {
     render() {
         return (
             <div>
-                <h1>Product page</h1>
-                {this.state.product.title}
-                {this.state.product.price}
+                {this.state.product.title} -
+               ${this.state.product.price} 
                 <br />
                 <br />
                 <button className="btn-ass-to-cart"
                     onClick={this.addToCart.bind(this)}>Add to cart</button>
+                <img className="product-image"
+                    src={'http://localhost:4000/products/'} />
             </div>
         )
     }

@@ -17,6 +17,11 @@ export class Products extends Component {
             .then(products => this.setState({ products }))
     }
 
+    remove(productId){
+        productService.remove(productId);
+
+    }
+
     render() {
 
         return <div>
@@ -25,13 +30,12 @@ export class Products extends Component {
                 <Link to="/admin/products/create" className="btn btn-primary">Create product</Link>
             </div>
             <table className="table table-striped">
-
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Id</th>
                         <th>Title</th>
                         <th>Price</th>
-                        <th>Option</th>
+                        <th>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,9 +45,10 @@ export class Products extends Component {
                             <td>
                                 <img className="product-image"
                                     src={'http://localhost:4000/products/' + product.image} />
-                                {product.title}
+                                {product.title} 
                             </td>
                             <td>${product.price.toFixed(2)}</td>
+                           <td><button onClick={this.remove.bind(this, product.id)} className="btn btn-danger"> Remove </button></td>
                         </tr>
                     })}
                 </tbody>

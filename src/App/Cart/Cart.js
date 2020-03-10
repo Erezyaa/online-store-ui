@@ -38,7 +38,7 @@ export class Cart extends Component {
         return products;
     }
 
-    carcTotal(products) {
+    calcTotal(products) {
         let total = 0;
         products.forEach(product => {
             total += product.qty * product.price;
@@ -79,7 +79,7 @@ export class Cart extends Component {
                     <tfoot>
                         <tr>
                             <td colSpan="4"></td>
-                            <td><strong>Total:</strong> ${this.carcTotal(this.state.products).toFixed(2)}</td>
+                            <td><strong>Total:</strong> ${this.calcTotal(this.state.products).toFixed(2)}</td>
                         </tr>
                     </tfoot>
                 </table>

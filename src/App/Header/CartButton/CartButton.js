@@ -12,7 +12,7 @@ export class CartButton extends React.Component {
     render() {
         return (
             <div className="CartButton badge badge-light">
-                Cart: {this.props.itemCount}
+                <span className="CartButton-text">Cart: {this.props.itemCount}</span>
             </div>
         );
     }

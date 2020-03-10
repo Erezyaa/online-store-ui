@@ -2,7 +2,46 @@
 
 div {
     color: #000000;
-    margin-top: 25px;
+}
+.catrgory {
+    color: green;
+    padding: 50px;
+    font-size: 25px;
+    position: relative;
+    top: 35px;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  .pop {
+    display: none;
+    position: absolute;
+  }
+  
+  .menu-item {
+    position: relative;
+  }
+  
+  .menu-item:hover .pop {
+    display: block;
+    top: 100%;
+  }
+
+  .categories {
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    
     
 }
 

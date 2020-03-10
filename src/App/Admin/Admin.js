@@ -9,9 +9,9 @@ import CreateProduct from './Products/CreateProduct/CreateProduct';
 
 
 export class Admin extends Component {
+
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount() {
@@ -19,7 +19,6 @@ export class Admin extends Component {
             .me()
             .then(response => response.json())
             .then(user => {
-                console.log(user);
                 if (!user.isAdmin) {
                     this.props.history.push('/');
                 }

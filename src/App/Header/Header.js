@@ -24,10 +24,9 @@ class Header extends React.Component {
                     <li><Link to="/login">Login</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/cart" className="cart">Cart</Link></li>
-
                 </ul>
-                <CartButton />
                 <button onClick={this.logout.bind(this)}>Logout</button>
+                <CartButton />
             </header>
         );
     }

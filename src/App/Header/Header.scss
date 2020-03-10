@@ -2,9 +2,13 @@
     border-bottom: 1px solid #eeeeee;
     margin-bottom: 20px;
     justify-content: center;
-    
-  }
+    position: sticky;
   
+  }
+  .Header-d-flex  button{
+    margin-right: 200px;  
+    background-color: red; 
+  }
 
   .menu {
     list-style: none;
@@ -16,7 +20,6 @@
       margin: 0 35px 0 0;
   
       a {
-        
         color: #ffffff;
         font-weight: bold;
         background: green;
@@ -25,11 +28,18 @@
         &:hover,
 	      &:focus,
       	&:active {
-	      	
           text-decoration: none;
           background: #fff82d;
         }
       }
 
     }
+
+    // .button {
+    //   background-color: black;
+    // }
+    
+    // .button:hover {
+    //   background-color: red;
+    // }
   }

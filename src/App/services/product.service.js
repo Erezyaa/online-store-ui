@@ -7,7 +7,6 @@ class ProductService extends Network {
         for (let prop in product) {
             data.append(prop, product[prop]);
         }
-
         return this.sendMultipart('PUT', '/product', data);
     }
 
@@ -18,6 +17,7 @@ class ProductService extends Network {
     getByCategoryId(categoryId) {
         return this.send('GET', `/category/${categoryId}/product`);
     }
+
     getById(productId) {
         return this.send('GET', `/product/${productId}`);
     }
@@ -26,8 +26,12 @@ class ProductService extends Network {
         return this.send('POST', `/product/bulk`, {
             ids: productIds
         });
-
     }
+
+    remove(productId) {
+        return this.send('DELETE', `/product/${productId}`);
+    }
+
 }
 
 export default new ProductService();
