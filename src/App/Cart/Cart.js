@@ -55,7 +55,7 @@ export class Cart extends Component {
     render() {
         return (
             <div>
-                <h1>Cart</h1>
+                <h1>My Cart</h1>
                 <table className="table table-striped">
                     <thead>
                         <tr>

@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 import Categories from '../Homepage/Categories/Categories';
-
+import Carousel from 'nuka-carousel';
 
 export class Homepage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            slideIndex: 0,
+            wrapAround: false,
+            underlineHeader: false,
+            slidesToShow: 1,
+            slidesToScroll: "auto",
+            cellAlign: "left",
+            transitionMode: "scroll",
+            heightMode: "max",
+            withoutControls: false
+        };
+        this.handleImageClick = this.handleImageClick.bind(this);
+    }
+
+    handleImageClick() {
+        this.setState({ underlineHeader: !this.state.underlineHeader });
+    }
 
 
 
@@ -11,49 +30,31 @@ export class Homepage extends Component {
             <div className="container">
 
                 <Categories />
-
-                {/* <Carousel interval={3000} className="carousel">
-                    <Carousel.Item>
-                        <img
-                            className="d-block"
-                            src="https://cdn.yalla.co.il/media/v1/u5470/zoom/14920963430-1.png"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>מבצע לכבוד השנה החדשה!</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-
-                        <img
-                            className="d-block"
-                            src="https://d2rp9bqx0m7ihv.cloudfront.net/media/1/photos/products/069875/69875-228847-acana-light-fit-all-breeds-6-8-kg-2_1_g.jpg"
-                            alt="Second slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>אקנה לייט</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block"
-                            src="https://www.animalshop.co.il/images/itempics/4756001_18052019230347_large.jpg"
-                            alt="Third slide"
-                        />
-
-                        <Carousel.Caption>
-                            <h3>מבצע על האקווריומים</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel> */}
-
+                <div className="carousel-home">
+                    <Carousel
+                        withoutControls={this.state.withoutControls}
+                        transitionMode={this.state.transitionMode}
+                        cellAlign={this.state.cellAlign}
+                        slidesToShow={this.state.slidesToShow}
+                        slidesToScroll={this.state.slidesToScroll}
+                        wrapAround={this.state.wrapAround}
+                        slideIndex={this.state.slideIndex}
+                        heightMode={this.state.heightMode}
+                    >
+                        <img src="https://www.petpoint.co.il/images/light_and_fit(1).jpg" />
+                        <img src="https://5.imimg.com/data5/KI/WY/MY-40297789/glass-bowl-fish-tank-500x500.jpg" />
+                        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide3" />
+                        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide4" />
+                        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5" />
+                        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6" />
+                    </Carousel>
+                </div>
             </div>
 
         );
     }
 }
+
+
 
 export default Homepage;
